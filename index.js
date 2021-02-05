@@ -21,9 +21,9 @@ app.get("/login/:user/:pwd", (req, res) => {
 			res.json({error: err.message})
 		} else {
 			if (row !== undefined) {
-				res.json({ok: true})		
+				res.status(200).json({ok: true})		
 			} else {
-				res.status(401).send({ok: false})
+				res.status(401).json({ok: false})
 			}	
 		}
 	})
